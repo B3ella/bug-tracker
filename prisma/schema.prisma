@@ -44,6 +44,17 @@ model User {
   email         String?   @unique
   emailVerified DateTime?
   image         String?
+  Bug           Bug[]
+}
+
+model Bug {
+  id          String @id @default(cuid())
+  title       String
+  description String
+  user        User   @relation(fields: [userId], references: [id])
+  userId      String
+
+  @@index([userId])
 }
 
 model VerificationToken {
