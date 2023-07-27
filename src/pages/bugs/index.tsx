@@ -1,7 +1,8 @@
+import Header from "~/components/Header";
 export default function () {
   return (
     <main>
-      <h1>see bugs</h1>
+      <Header title="see bugs" />
     </main>
   );
 }

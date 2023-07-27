@@ -1,6 +1,6 @@
 import { signIn, signOut, useSession } from "next-auth/react";
 import Head from "next/head";
-import Link from "next/link";
+import Header from "~/components/Header";
 import { api } from "~/utils/api";
 
 export default function Home() {
@@ -14,10 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <main>
-        <header>
-          <h1 className="m-4 font-sans text-4xl">Bug Tracker</h1>
-          <nav></nav>
-        </header>
+        <Header title="Bug tracker" />
       </main>
     </>
   );
