@@ -15,7 +15,7 @@ export default function Home() {
       </Head>
       <main>
         <header>
-          <h1>Bug Tracker</h1>
+          <h1 className="m-4 font-sans text-4xl">Bug Tracker</h1>
           <nav></nav>
         </header>
       </main>
