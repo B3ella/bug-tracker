@@ -1,5 +1,19 @@
-import { FormEvent } from "react";
+import { FormEvent, ReactNode } from "react";
 import Header from "~/components/Header";
+
+interface ICustomLabelProps {
+  children: ReactNode;
+  label: string;
+}
+
+function CustomLabel({ children, label }: ICustomLabelProps) {
+  return (
+    <label className="m-1 flex w-1/5 justify-between capitalize">
+      {label}
+      {children}
+    </label>
+  );
+}
 
 interface ILabelInputProps {
   inputType: string;
@@ -8,10 +22,9 @@ interface ILabelInputProps {
 
 function LabelInput({ inputType, label }: ILabelInputProps) {
   return (
-    <label className="m-1 flex w-1/5 justify-between capitalize">
-      {label}
-      <input type={inputType} className="bg-slate-600 text-white" />
-    </label>
+    <CustomLabel label={label}>
+      <input type={inputType} className="w-48 bg-slate-600 text-white" />
+    </CustomLabel>
   );
 }
 
@@ -32,6 +45,13 @@ export default function () {
         <LabelInput inputType="text" label="title" />
         <LabelInput inputType="text" label="description" />
         <LabelInput inputType="text" label="Assigned Developer" />
+        <CustomLabel label="Developer">
+          <select className="w-48 bg-slate-600 text-white">
+            <option value="developer">dev1</option>
+            <option value="developer1">dev2</option>
+            <option value="developer2">dev3</option>
+          </select>
+        </CustomLabel>
         <button>Report</button>
       </form>
     </main>
