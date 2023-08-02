@@ -26,10 +26,16 @@ function LabelInput({ inputType, label }: ILabelInputProps) {
   );
 }
 
-function SelectDev({ devNames }: { devNames: string[] }) {
-  const options = devNames.map((name) => {
-    return <option value={name}>{name}</option>;
-  });
+function option(name: string) {
+  return <option value={name}>{name}</option>;
+}
+
+interface ISelectDevProps {
+  devNames: string[];
+}
+function SelectDev({ devNames }: ISelectDevProps) {
+  const options = devNames.map(option);
+
   return (
     <CustomLabel label="Developer">
       <select className="w-48 bg-slate-600 text-white">{options}</select>
