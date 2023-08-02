@@ -26,12 +26,11 @@ function LabelInput({ inputType, label }: ILabelInputProps) {
   );
 }
 
-function option(name: string) {
-  return <option value={name}>{name}</option>;
-}
-
 interface ISelectDevProps {
   devNames: string[];
+}
+function option(name: string) {
+  return <option value={name}>{name}</option>;
 }
 function SelectDev({ devNames }: ISelectDevProps) {
   const options = devNames.map(option);
