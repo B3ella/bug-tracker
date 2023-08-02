@@ -28,6 +28,18 @@ function LabelInput({ inputType, label }: ILabelInputProps) {
   );
 }
 
+function SelectDev() {
+  return (
+    <CustomLabel label="Developer">
+      <select className="w-48 bg-slate-600 text-white">
+        <option value="developer">dev1</option>
+        <option value="developer1">dev2</option>
+        <option value="developer2">dev3</option>
+      </select>
+    </CustomLabel>
+  );
+}
+
 export default function () {
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -45,13 +57,7 @@ export default function () {
         <LabelInput inputType="text" label="title" />
         <LabelInput inputType="text" label="description" />
         <LabelInput inputType="text" label="Assigned Developer" />
-        <CustomLabel label="Developer">
-          <select className="w-48 bg-slate-600 text-white">
-            <option value="developer">dev1</option>
-            <option value="developer1">dev2</option>
-            <option value="developer2">dev3</option>
-          </select>
-        </CustomLabel>
+        <SelectDev />
         <button>Report</button>
       </form>
     </main>
