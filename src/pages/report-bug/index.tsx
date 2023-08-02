@@ -5,7 +5,6 @@ interface ICustomLabelProps {
   children: ReactNode;
   label: string;
 }
-
 function CustomLabel({ children, label }: ICustomLabelProps) {
   return (
     <label className="m-1 flex w-1/5 justify-between capitalize">
@@ -19,7 +18,6 @@ interface ILabelInputProps {
   inputType: string;
   label: string;
 }
-
 function LabelInput({ inputType, label }: ILabelInputProps) {
   return (
     <CustomLabel label={label}>
