@@ -26,14 +26,13 @@ function LabelInput({ inputType, label }: ILabelInputProps) {
   );
 }
 
-function SelectDev() {
+function SelectDev({ devNames }: { devNames: string[] }) {
+  const options = devNames.map((name) => {
+    return <option value={name}>{name}</option>;
+  });
   return (
     <CustomLabel label="Developer">
-      <select className="w-48 bg-slate-600 text-white">
-        <option value="developer">dev1</option>
-        <option value="developer1">dev2</option>
-        <option value="developer2">dev3</option>
-      </select>
+      <select className="w-48 bg-slate-600 text-white">{options}</select>
     </CustomLabel>
   );
 }
@@ -55,7 +54,7 @@ export default function () {
         <LabelInput inputType="text" label="title" />
         <LabelInput inputType="text" label="description" />
         <LabelInput inputType="text" label="Assigned Developer" />
-        <SelectDev />
+        <SelectDev devNames={["dev1", "dev2", "dev3"]} />
         <button>Report</button>
       </form>
     </main>
